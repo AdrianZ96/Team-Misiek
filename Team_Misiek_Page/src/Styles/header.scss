@@ -1,0 +1,17 @@
+.header{
+    margin: 0;
+    background-color:$color-orange;
+    font-size: $font-size-xlarge;
+    color:  $color-grey;
+    text-align: center;
+    font-weight: 700;
+    padding-block: 1rem;
+}
+.icon{
+    position: absolute;
+    top: 0.5em;
+    right: 0.3em;
+    background-color: $color-orange;
+    border: none;
+    cursor: pointer;
+}
