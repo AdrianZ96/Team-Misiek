@@ -1,42 +1,110 @@
-.header {
-  margin: 0;
-  background-color: #FF7F50;
-  font-size: 24px;
-  color: #333333;
-  text-align: center;
-  font-weight: 700;
-  padding-block: 1rem;
+
+/* Zmienne kolorów i czcionek */
+:root {
+    --color-orange: #FF1515;
+    --color-grey: #222;
+    --font-color-oran: #FF1515;
+    --font-color-whit: #f0f0f0; /* Jaśniejszy kolor czcionki dla lepszej widoczności */
+    --font-color-black: #000;
+    --font-size-small: 14px;
+    --font-size-medium: 16px;
+    --font-size-large: 18px;
+    --font-size-xlarge: 24px;
 }
 
-.icon {
-  position: absolute;
-  top: 0.5em;
-  right: 0.3em;
-  background-color: #FF7F50;
-  border: none;
-  cursor: pointer;
-}
-
+/* Ogólne style */
 body {
-  background-color: gray;
-  margin: 0;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-grey);
+    color: var(--font-color-whit);
 }
 
-@media screen and (min-width: 1201px) {
-  body {
-    background-color: red;
-  }
-}
-@media screen and (min-width: 481px) and (max-width: 1200px) {
-  body {
-    background-color: blue;
-  }
-}
-a {
-  text-decoration: none;
-  color: #fff;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--color-orange);
+    color: var(--font-color-whit);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-li {
-  list-style: none;
-}/*# sourceMappingURL=main.css.map */
+.header .logo a {
+    font-size: var(--font-size-large);
+    color: var(--font-color-whit);
+    text-decoration: none;
+}
+
+/* Przycisk do otwierania menu na małych ekranach */
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none; /* Będzie widoczny tylko na telefonach */
+}
+
+/* Styl dla menu na większych ekranach (flex row) */
+nav.menu {
+    display: flex;
+    flex-direction: row;
+}
+
+nav.menu ul {
+    display: flex; /* Wyświetlamy elementy w jednym rzędzie */
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav.menu ul li {
+    margin: 0 15px;
+}
+
+nav.menu ul li a {
+    text-decoration: none;
+    color: var(--font-color-whit);
+    font-size: var(--font-size-medium);
+}
+
+/* Media queries dla małych ekranów */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* Ukryj menu na małych ekranach */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: var(--color-orange);
+        padding: 20px;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: inline-block; /* Widoczne tylko na telefonach */
+    }
+
+    .menu.show {
+        display: block; /* Pokazuj menu, gdy klasa 'show' jest dodana */
+    }
+}
+
+/* Stylowanie stopki */
+footer {
+    background-color: var(--color-grey);
+    padding: 20px;
+    text-align: center;
+}
+
+footer .social-media a {
+    color: var(--font-color-whit);
+    margin: 0 10px;
+    text-decoration: none;
+}
