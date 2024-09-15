@@ -2,6 +2,7 @@
 /* Zmienne kolorów i czcionek */
 :root {
     --color-orange: #FF1515;
+    --color-hover-ogan: #ff5050;
     --color-grey: #222;
     --font-color-oran: #FF1515;
     --font-color-whit: #f0f0f0; /* Jaśniejszy kolor czcionki dla lepszej widoczności */
@@ -10,8 +11,12 @@
     --font-size-medium: 16px;
     --font-size-large: 18px;
     --font-size-xlarge: 24px;
-}
 
+}
+*{
+    padding: 0;
+    margin: 0;
+}
 /* Ogólne style */
 body {
     margin: 0;
@@ -22,9 +27,9 @@ body {
 
 header {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
     background-color: var(--color-orange);
     color: var(--font-color-whit);
     position: sticky;
@@ -36,6 +41,7 @@ header {
     font-size: var(--font-size-large);
     color: var(--font-color-whit);
     text-decoration: none;
+
 }
 
 /* Przycisk do otwierania menu na małych ekranach */
@@ -58,10 +64,6 @@ nav.menu ul {
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-nav.menu ul li {
-    margin: 0 15px;
 }
 
 nav.menu ul li a {
@@ -94,6 +96,21 @@ nav.menu ul li a {
     .menu.show {
         display: block; /* Pokazuj menu, gdy klasa 'show' jest dodana */
     }
+}
+/*Style nagłówka */
+.logo{
+    font-size: 40px;
+    text-decoration: none;
+    color: var(--font-color-whit);
+    font-weight: 700;
+}
+.nav-list{
+    font-size: 6px;
+    padding: 16px 78px;
+    border-inline: 1px solid var(--color-hover-ogan);
+}
+.nav-list:hover{
+    background-color:var(--color-hover-ogan) ;
 }
 
 /* Stylowanie stopki */
